@@ -17,6 +17,8 @@ if (isset($_POST['create'])) {
 
     $query = $conn->prepare($sql);
     $query->execute([$book_name, $author, $genre, $quantity]);
+
+    var_dump($query); die();
     if ($query) {
         header('Location: '. $_SERVER['HTTP_REFERER']);
     }
